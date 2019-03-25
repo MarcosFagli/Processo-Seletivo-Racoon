@@ -98,3 +98,65 @@ quantidade de cada produto.
 ```
 Implementar e entregar as 2 funções separadamente para correção. Enviar também para
 correção qual foi a saída para cada uma delas.
+
+## Soluções:
+A tecnica utilizada para realizar as tarefas foram as seguintes:
+### 0. Pré solução:
+Antes de realizar as funções para tratamento dos erros, foi aberto o arquivo broken-database.json. Utilizando a biblioteca em python para json, as informações json foram transformadas em um dicionário python e em seguida, uma lista de dicionários foi criada. 
+A função ReadFile é responsável por esse processamento e retorna uma lista de dicionários python
+
+### 1. Correção dos nomes:
+Para a correção dos nomes, foi criada uma função chamada Replace, que percorre a lista de dicionários, e para cada dicionário, analisa a chave "name", buscando pelos caracteres corrompidos, e alterando-os.
+
+### 2. Correção dos preços:
+Para a correção dos preços, foi criada uma função chamada ConvertPrice, que percorre a lista de dicionários, e para cada dicionário, reinsere o conteúdo do dicionário na chave "price", com uma conversão para float (tipo de dado number, quando convertido para json) do proprio conteúdo da chave price, naquele dicionário.
+
+### 3. Correção do conteúdo:
+Para a correção da falta do campo "quantity", foi criada uma função chamada InsertQuantity, que percorre a lista de dicionários, e para cada dicionário, verifica se a chave "quantity" existe naquele dicionário. Caso não exista, aquela posição da lista é reposta com todos os dados do dicionário presente, acrescido do campo "quantity" com valor 0.
+
+### 4. Imprimir a lista com os nomes por ordem alfabética de categoria e em seguida ordenados por ordem crescente de ID:
+Imprime uma lista somente com os nomes, impressa primeiramente por ordem alfabética de categoria e em seguida, impressa por ordem númerica. 
+Para esta tarefa foi criada a função PrintName. Nela o dicionário é quebrado em três vetores com nome, quantidade e Id, a partir desses foi utilizado a função sorted, nativa do python, para ordenar, por meio de outro vetor, o vetor nome. Esta regra foi aplicada para as duas formas de ordenação.
+Saída (ordenação por categoria):
+```
+Impressao dos nomes por categoria:
+1 Mouse Gamer Predator cestus 510 Fox Preto
+2 Fogão de Piso Electrolux de 04 bocas, Mesa de Vidro Prata
+3 Forno Micro-ondas Panasonic com capacidade de 21 Litros branco
+4 Lava & Seca 10,2 Kg Samsung Eco bubble branca com 09 Programas de Lavagem
+5 Refrigerador bottom Freezer Electrolux de 02 Portas Frost Free com 598 Litros
+6 Home Theater LG com blu-ray 3D, 5.1 canais e 1000W
+7 Kit Gamer acer - Notebook + Headset + Mouse
+8 Monitor 29 LG FHD Ultrawide com 1000:1 de contraste
+9 Smart TV 4K Sony LED 65” 4K X-Reality Pro, UpScalling, Motionflow XR 240 e Wi-F
+10 Conjunto de Panelas antiaderentes com 05 Peças Paris
+```
+Saída (Ordenação por ID):
+```
+Impressao dos nomes por ID:
+1 Refrigerador bottom Freezer Electrolux de 02 Portas Frost Free com 598 Litros
+2 Mouse Gamer Predator cestus 510 Fox Preto
+3 Kit Gamer acer - Notebook + Headset + Mouse
+4 Monitor 29 LG FHD Ultrawide com 1000:1 de contraste
+5 Conjunto de Panelas antiaderentes com 05 Peças Paris
+6 Fogão de Piso Electrolux de 04 bocas, Mesa de Vidro Prata
+7 Smart TV 4K Sony LED 65” 4K X-Reality Pro, UpScalling, Motionflow XR 240 e Wi-F
+8 Forno Micro-ondas Panasonic com capacidade de 21 Litros branco
+9 Lava & Seca 10,2 Kg Samsung Eco bubble branca com 09 Programas de Lavagem
+10 Home Theater LG com blu-ray 3D, 5.1 canais e 1000W
+```
+
+### 5. Imprimir as categorias e valores em estoque de cada uma.
+Imprime uma lista com as categorias disponíveis e os valores em estoque de cada categoria.
+Para esta tarefa foi criada a função CategoryCust. Nesta se percorre a lista de dicionários, e para cada nova categoria detectada, a categoria, e o valor é colocado em uma nova lista. Ainda, quando a categoria detectada já existe no vetor, é apenas somado o valor de estoque existente, com a multiplicação entre quantidade do produto e seu preço.
+No final é impresso a lista gerada com categoria e valor, e no fim, é impresso "Total", com o valor total em estoque.
+Saída:
+```
+Valor dos produtos por categoria em estoque:
+Panelas = 4049.64
+Eletrodomésticos = 315752.67
+Eletrônicos = 203989.20
+Acessórios = 0.00
+Total = 523791.51
+```
+
