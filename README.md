@@ -117,6 +117,7 @@ Para a correção da falta do campo "quantity", foi criada uma função chamada 
 ### 4. Imprimir a lista com os nomes por ordem alfabética de categoria e em seguida ordenados por ordem crescente de ID:
 Imprime uma lista somente com os nomes, impressa primeiramente por ordem alfabética de categoria e em seguida, impressa por ordem númerica. 
 Para esta tarefa foi criada a função PrintName. Nela o dicionário é quebrado em três vetores com nome, quantidade e Id, a partir desses foi utilizado a função sorted, nativa do python, para ordenar, por meio de outro vetor, o vetor nome. Esta regra foi aplicada para as duas formas de ordenação.
+
 Saída (ordenação por categoria):
 ```
 Impressao dos nomes por categoria:
