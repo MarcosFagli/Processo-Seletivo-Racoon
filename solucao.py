@@ -59,7 +59,7 @@ def StoreFile(listStr, name):
 
 	#Traducao de cada elemento do dicionario
 	for i in range(len(listStr)):
-		string = string + json.dumps(listStr[i], indent=4, ensure_ascii=False) + "\n"
+		string = string + json.dumps(listStr[i], indent=4, ensure_ascii=False) + ",\n"
 
 	string = string + ']'	
 
