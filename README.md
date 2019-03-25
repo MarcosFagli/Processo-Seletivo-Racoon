@@ -65,3 +65,36 @@ Corrompido:
     "category": "Eletrodomésticos"
 }
 ```
+
+## Questões:
+
+Para esse projeto, você utilizará o arquivo broken-database.json e irá fazer
+uma série de transformações até que ele volte ao formato original. Para isso será necessário
+desenvolver algumas funções e depois verificar se realmente foi recuperado. Você deverá
+utilizar JavaScript ou Python para resolver esse problema, caso não conheça nenhuma
+dessas linguagens, é uma ótima oportunidade para aprender! :)
+
+### 1. Recuperação dos dados originais do banco de dados
+Você deverá criar três funções para percorrer o banco de dados corrompido e corrigir os três
+erros descritos anteriormente:
+```
+a) Nos nomes;
+b) Nos preços;
+c) Nas quantidades.
+```
+Implementar e entregar as três funções separadamente para correção. Enviar também para
+correção um arquivo com o banco de dados corrigido, ou seja, após passar pelas três funções.
+
+### 2. Validação do banco de dados corrigido
+Você deverá implementar funções para validar a sua recuperação do banco de dados. Todas
+essas funções deverão ter como input o seu banco de dados corrigido na questão 1. As
+funções de validação são:
+```
+a) Uma função que imprime a lista com todos os nomes dos produtos, ordenados primeiro
+por categoria em ordem alfabética, depois ordenados por id em ordem crescente;
+b) Uma função que calcula qual é o valor total do estoque por categoria, ou seja, a soma
+do valor de todos os produtos em estoque de cada categoria, considerando a
+quantidade de cada produto.
+```
+Implementar e entregar as 2 funções separadamente para correção. Enviar também para
+correção qual foi a saída para cada uma delas.
